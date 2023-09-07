@@ -1,0 +1,25 @@
+form{
+    border: 1px solid gold;
+    background-color: aqua;
+    width: 600px;
+    height: 800px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+label{
+    width: 100px;
+}
+input{
+    margin: 10px;
+    width: 200px;
+}
+.parent{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

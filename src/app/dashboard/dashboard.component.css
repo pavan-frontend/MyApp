@@ -1,0 +1,68 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.contain{
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(127, 127, 132);
+    display: flex;
+}
+.left{
+    width: 20%;
+    height: 100%;
+    background-color: rgb(196, 255, 205);
+    overflow: auto;
+    
+}
+.left h2{
+    margin-top: 20px;
+    text-align: left;
+}
+.right{
+    width: 80%;
+    height: 100%;
+    overflow: auto;
+    background-color: antiquewhite;
+}
+h1{
+    text-align: center;
+    color: blue;
+}
+h2{
+    text-align: center;
+}
+.logout{
+    background-color: chocolate;
+    width: 100px;
+    height: 40px;
+    color: rgb(25, 240, 61);
+    text-align: center;
+    border-radius: 10px; 
+    font-size: 20px;
+    box-shadow: 5px 5px 10px orange;
+    cursor: pointer;
+
+}
+    
+
+
+.log{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    
+    
+
+}
+a{
+    text-decoration: none;
+}
+
+.left h2:hover{
+    background-color: gray;
+    cursor: pointer;
+}
+
+

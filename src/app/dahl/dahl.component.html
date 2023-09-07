@@ -1,0 +1,34 @@
+<div *ngFor="let d of dahl" class="parent">
+    <div class="top">
+        <div class="t1">
+            <h1>{{d.data.author}}</h1>
+            <h1>{{d.data.birthday}}</h1>
+            <h1>{{d.data.birthPlace}}</h1>
+        </div>
+        <div class="t2">
+            <button>Add New Book</button><br><br>
+            <button>Sort By Title</button><br>
+            <button>Sort By published Date</button>
+
+        </div>
+    </div>
+
+    <div class="bot" >
+        <div class="bot1" *ngFor="let b of d.data.books" >
+            <select>
+                <option>Edit</option>
+                <option>Delete</option>
+                <option selected>Action</option>
+            </select>
+            <img src="{{b.imageUrl}}" style="height: 300px; width: 300px;">
+            <h1>{{b.title}}</h1>
+            <h1>{{b.PublishDate}}</h1>
+            <a  class="btn btn-info" href="{{b.purchaseLink}}">Buy Book</a>
+        </div>
+
+    </div>
+
+
+
+
+</div>

@@ -1,0 +1,13 @@
+<h1>Grades</h1>
+
+<input type="number" [(ngModel)]="marks">
+<h1 *ngIf="marks>=520 && marks<601">Grade A1</h1>
+<h1 *ngIf="marks>=450 && marks<520">Grade A2</h1>
+<h1 *ngIf="marks>=370 && marks<450">Grade B1</h1>
+<h1 *ngIf="marks>=300 && marks<370">Grade B2</h1>
+<h1 *ngIf="marks<300">Grade C</h1>
+
+
+
+
+

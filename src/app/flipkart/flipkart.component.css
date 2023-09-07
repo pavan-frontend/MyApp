@@ -1,0 +1,39 @@
+
+    
+*{
+    margin: 0;
+    padding: 0;
+}
+.parent{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);;
+}
+
+.products{
+    width: 300px;
+    height: 355px;
+    border: 1px solid;
+    border-radius: 10px;
+    background-color: rgb(69, 72, 72);
+    margin: 10px;
+    padding: 10px;
+    font-weight: bold;
+    color: rgb(243, 244, 241);
+    /* overflow: auto; */
+   
+    
+}
+.Fimage{
+    width: 100%;
+    height: 200px;
+    border:1px solid;
+    border-radius: 5px;
+    
+}
+.desc{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

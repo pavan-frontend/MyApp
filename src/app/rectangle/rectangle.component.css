@@ -1,0 +1,48 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.rectangle{
+    /* text-align: center; */
+    /* border: 1px solid red; */
+    background-color: rgb(16, 218, 60);
+    width: 500px;
+    height: 400px;
+    padding: 10px;
+    margin:auto;
+    border-radius: 10px;
+    
+    box-shadow: 8px 8px 10px green;
+    
+}
+div h1{
+    text-align: center;
+    color: rgb(240, 9, 9);
+}
+.rectangle label{
+    font-size: 20px;
+    color: rgb(45, 11, 194);
+    font-weight: bold;
+    margin: 10px 0px;
+    text-align: start;
+}
+.rectangle input{
+    width: 100%;
+    height: 40px;
+    margin: 6px 0px;
+    outline: 0;
+    border-radius: 5px;
+}
+.rectangle button{
+    width: 100px;
+    height: 40px;
+    cursor: pointer;
+    background-color: rgb(213, 126, 13);
+    border: 0;
+    outline: 0;
+    margin:10px 30px;
+    border-radius: 10px;
+    color: antiquewhite;
+}

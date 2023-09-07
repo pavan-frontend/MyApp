@@ -1,0 +1,43 @@
+    <input type="text" placeholder="search" [(ngModel)]="term" (keypress)="filter()">
+    <button class="btn btn-primary btn1" (click)="onlyfreed()">Only Free Delivery</button>
+    <br>
+
+<div class="sort">
+    <button (click)="priceLtoH()">price low to high</button>
+    <button (click)="priceHtoL()">price high to low</button>
+    <button (click)="ratingLtoH()">rating low to high</button>
+    <button (click)="ratingHtoL()">rating high to low</button>
+</div>
+<div class="map">
+    <button (click)="Discount()">Apply 50% discount</button>
+    <button (click)="Delivery()">price with delivery charges</button>
+</div>
+<div class="total">
+    <button (click)="Total()">total price</button>
+    <button (click)="Cartitems()">Total cart items</button>
+</div>
+
+<table class="table table-bordered table-dark">
+    <thead>
+        <tr>
+            <th>sno</th>
+            <th>Product Name</th>
+            <th>Price</th>
+            <th>Rating</th>
+            <th>Free delivery</th>
+            <th>actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of products; let i=index">
+            <td>{{i+1}}</td>
+            <td>{{product.productname}}</td>
+            <td>{{product.price | price}}</td>
+            <td>{{product.rating}}</td>
+            <td>{{product.freedeliver}}</td>
+            <div>
+                <button class="btn btn-danger" (click)="delete(i)">Delete</button>
+            </div>
+        </tr>
+    </tbody>
+</table>

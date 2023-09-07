@@ -1,0 +1,18 @@
+<p>Flipkart Products</p>
+
+<div class="parent row">
+    <div class="products" *ngFor="let F of Fproducts">
+        <img src="{{F.image}}" alt="" class="Fimage">
+        <p>Price:{{F.price|price}}</p>
+        <p class="desc">{{F.description}}</p>
+        <p>{{F.category}}</p>
+        <p>{{F.rating.count}}</p>
+        <p>{{F.rating.rate}}</p>
+        <p>{{F.rating.count}}</p>
+
+
+
+
+
+    </div>
+</div>

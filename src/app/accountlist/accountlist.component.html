@@ -1,0 +1,72 @@
+<p>accountlist works!</p>
+
+
+<input type="text" [(ngModel)]="term" (keypress)="getfilteredaccountlist()"/>
+<label>column</label>
+<select [(ngModel)]="column">
+    <option>city</option>
+    <option>account_name</option>
+</select>
+
+<label>order</label>
+<select [(ngModel)]="order">
+    <option>asc</option>
+    <option>desc</option>
+</select>
+<button (click)="getSortedaccountlist()">SORT</button>
+
+<label>Limit</label>
+<select [(ngModel)]="limit">
+    <option>3</option>
+    <option>5</option>
+    <option>10</option>
+</select>
+<label>Page</label>
+<select [(ngModel)]="page">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+    <option>5</option>
+
+</select>
+<button class="btn btn-info" (click)="getPageAccountlist()">Next </button>
+
+
+<table class="table table-bordered table-dark">
+    <thead>
+        <tr>
+            <th>Account_name</th>
+            <th>Available_balance</th>
+            <th>Account_number</th>
+            <th>City</th>
+            <th>Profile Picture</th>
+            <th>action</th>
+            <!-- <th>action</th> -->
+            
+
+        </tr>
+
+    </thead>
+    <tbody>
+        <tr *ngFor=" let a of accountlist">
+
+            <td>{{a.account_name}}</td>
+            <td>{{a.available_balance}}</td>
+            <td>{{a.account_number}}</td>
+            <td>{{a.city}}</td>
+            <td>
+                <img src="{{a.profie_picture}}" alt="">
+            </td>
+            <!-- <td>
+                <button class="btn btn btn-danger" (click)="delete()">Delete</button>
+            </td>
+             -->
+             <td>
+                <button class="btn btn-danger" (click)="deleteaccountlist(a.id)">Delete</button>
+             </td>
+
+        </tr>
+
+    </tbody>
+</table>

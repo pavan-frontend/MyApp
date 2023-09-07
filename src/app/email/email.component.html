@@ -1,0 +1,22 @@
+
+
+<div class="email" *ngFor="let e of email">
+    <div>
+        <img src="assets\icici.png" alt="">
+
+    </div>
+
+   <div class="desc" [ngStyle]="{'color':e.completed==true ? 'gray':'black'}">
+        <h6>{{e.userId}}</h6>
+        <h6>{{e.id}}</h6>
+        <h6>{{e.title}}</h6>
+        <h6>{{e.completed}}</h6>
+        
+
+   </div>
+
+
+
+
+
+</div>

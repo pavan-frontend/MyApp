@@ -1,0 +1,39 @@
+/* .bot{
+   display: flex;
+   justify-content: space-evenly;
+   flex-wrap: wrap;
+    
+
+
+}
+.bot1{
+    height: 400px;
+    width: 300px;
+    border: 1px solid;
+    background-color: gray;
+    margin: 10px;
+    
+    
+
+} */
+
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    background-color: aqua;
+
+
+}
+.bot{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+   
+}
+.bot1{
+    border: 1px solid;
+    margin: 10px;
+    width: 300px;
+    
+}
