@@ -19,7 +19,6 @@ export class LoginComponent {
 
   login() {
     console.log(this.loginform);
-    console.log(this.loginform);
     this._LoginService.postloginform(this.loginform.value).subscribe(
       (data: any) => {
         alert("Login successfull");

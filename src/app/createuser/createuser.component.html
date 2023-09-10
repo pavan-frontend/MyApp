@@ -1,18 +1,113 @@
 <h1> User Form</h1>
 <div class="parent">
-<form [formGroup]="userForm">
-   <label>Name</label>
-   <input type="text" formControlName="name"><br>
-   <label>phone</label>
-   <input type="text" formControlName="phone"><br>
-   <label>city</label>
-   <input type="text" formControlName="city"><br>
-   <label>fee</label>
-   <input type="text" formControlName="fee"><br>
-   <label>id</label>
-   <input type="text" formConntrolName="id"><br>
+   <form [formGroup]="userForm">
+      <label>Name</label>
+      <input type="text" formControlName="name"><br>
+       <!--  input validators -->
+         <div class="text-danger" *ngIf="userForm.get('name')?.touched && userForm.get('name')?.invalid ">
+            <p *ngIf="userForm.get('name')?.errors?.['required']">Name is Requered</p>
+            <p *ngIf="userForm.get('name')?.errors?.['minlength']">Name should containe atlest 3</p>
 
-   <button class="btn btn-primary" (click)="submit()">Submit</button>
+         </div>
+      <label>phone</label>
+      <input type="text" formControlName="phone"><br>
+      <div class="text-danger" *ngIf="userForm.get('phone')?.touched && userForm.get('phone')?.invalid ">
+         <p *ngIf="userForm.get('phone')?.errors?.['required']">phone number is required</p>
+         <p *ngIf="userForm.get('phone')?.errors?.['max']">only 10 digitd allowed</p>
+         <p *ngIf="userForm.get('phone')?.errors?.['min']">Number should contain atleast 10 digits </p>
+
+      </div>
+      <label>city</label>
+      <input type="text" formControlName="city"><br>
+      <label>fee</label>
+      <input type="text" formControlName="fee"><br>
+      <label>id</label>
+      <input type="text" formConntrolName="id"><br>
+
+      <!-- Nested forms starts -->
+      <div formGroupName="address">
+         <label>hno</label>
+         <input type="text" formControlName="hno">
+         <br>
+         <label>state</label>
+         <input type="text" formControlName="state">
+         <br>
+          <div class="text-danger" *ngIf="userForm.get('address')?.get('state')?.touched && userForm.get('address')?.get('state')?.invalid ">
+           <p *ngIf="userForm.get('address')?.get('state')?.errors?.['required']">state is required</p>
+          </div>
+         <label>pincode</label>
+         <input type="text" formControlName="pin">
+         <br>
+         <div class="text-danger" *ngIf="userForm.get('address')?.get('pin')?.touched && userForm.get('address')?.get('pin')?.invalid ">
+            <p *ngIf="userForm.get('address')?.get('pin')?.errors?.['required']">pin is required</p>
+            <p *ngIf="userForm.get('address')?.get('pin')?.errors?.['max']">only 6 digitd allowed</p>
+            <p *ngIf="userForm.get('address')?.get('pin')?.errors?.['min']">Only 6 digits allowed </p>
+   
+         </div>
+
+
+      </div>
+      <!-- Nested forms end -->
+
+      <!-- formarray method starts -->
+      <button (click)="addCard()">add card</button>
+
+      <div formArrayName="cards">
+         <div *ngFor="let card of cardsFormArray.controls; let i=index">
+            <div formGroupName="{{i}}">
+               <h4>card{{i+1}}</h4>
+
+               <label>no:</label>
+               <input type="number" formControlName="no">
+               <br>
+               <label>exp:</label>
+               <input type="number" formControlName="exp">
+               <br>
+               <label>cvv</label>
+               <input type="number" formControlName="cvv">
+               <br>
+               <div class="text-danger" *ngIf="cardsFormArray.controls[i]?.get('cvv')?.touched && cardsFormArray.controls[i]?.get('cvv')?.invalid ">
+                 <p *ngIf="cardsFormArray.controls[i]?.get('cvv')?.errors?.['required']">CVV required</p>
+                 <p *ngIf="cardsFormArray.controls[i]?.get('cvv')?.errors?.['min']">min three digits allowed</p>
+                 <p *ngIf="cardsFormArray.controls[i]?.get('cvv')?.errors?.['max']">max 3 digits allowed</p>
+               </div>
+               <button class="btn btn-danger" (click)="deleteCard(i)">Delete</button>
+
+            </div>
+
+         </div>
+
+      </div>
+      <!-- form array method ends -->
+
+      <!-- dynamic forms starts -->
+
+      <label>type:</label>
+      <input type="radio" name="type" formControlName="type" value="dayScholor">
+      <label>day scholar</label><br>
+      <input type="radio" name="type" formControlName="type" value="residential">
+      <label>residential</label>
+      <br>
+
+      <div *ngIf="userForm.get('type')?.value == 'dayScholor'">
+         <label>bus fee:</label>
+         <input type="number" formControlName="busFee">
+         <br>
+
+      </div>
+
+      <div *ngIf="userForm.get('type')?.value == 'residential'">
+         <label>hostel fee:</label>
+         <input type="number" formControlName="hostelFee">
+         <br>
+
+      </div>
+
+
+      <!-- dynamic forms ends -->
+
+
+      <button class="btn btn-primary" (click)="submit()">Submit</button>
 
 
 
@@ -24,7 +119,8 @@
 
 
 
-</form>
+
+
+   </form>
 
 </div>
-

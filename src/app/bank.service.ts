@@ -5,6 +5,6 @@ import { Injectable } from '@angular/core';
 })
 export class BankService {
   
-  public balance:number = 1000;
+  public balance:number = 2000;
   constructor() {}
 }
