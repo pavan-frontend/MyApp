@@ -28,6 +28,7 @@ import { CreateuserComponent } from './createuser/createuser.component';
 import { CreateaccountComponent } from './createaccount/createaccount.component';
 import { authenticationGuard } from './authentication.guard';
 import { notifyGuard } from './notify.guard';
+import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.component';
 
 const routes: Routes = [
   {path:'login', component:LoginComponent},
@@ -54,7 +55,9 @@ const routes: Routes = [
     {path:"dahl", component:DahlComponent},
     {path:"createvehicle", component:CreatevehicleComponent, canDeactivate:[notifyGuard]},
     {path:"createuser",component:CreateuserComponent, canDeactivate:[notifyGuard]},
-    {path:"createaccount", component:CreateaccountComponent, canDeactivate:[notifyGuard]}
+    {path:"createaccount", component:CreateaccountComponent, canDeactivate:[notifyGuard]},
+    {path:"vehicle-details/:id", component:VehicleDetailsComponent},
+    {path:"edit-vehicle/:id",component:CreatevehicleComponent}
   
   ]},
   {path:'', component:LoginComponent},

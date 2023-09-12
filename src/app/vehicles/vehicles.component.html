@@ -61,6 +61,10 @@
             <td>{{vehicle.id}}</td>
             <td>
                 <button class="btn btn-danger" (click)="deleteVehicle(vehicle.id)">Delete</button>
+                <br>
+                 <button  class="btn btn-success" (click)="view(vehicle.id)">View</button>
+                 <br>
+                 <button class="btn btn-primary" (click)="Edit(vehicle.id)">Edit</button>
             </td>
         </tr>
 

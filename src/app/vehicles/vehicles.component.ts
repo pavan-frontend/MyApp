@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { VehiclesService } from '../vehicles.service';
 import { Observable } from 'rxjs';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-vehicles',
@@ -9,11 +10,11 @@ import { Observable } from 'rxjs';
 })
 export class VehiclesComponent {
   // variables start
-   public vehicles: any = [];  //get
+  public vehicles: any = [];  //get
 
-  public term: string = "";     
+  public term: string = "";
 
-  public column: string = "";  
+  public column: string = "";
   public order: string = "";
 
   public page: any = [];
@@ -21,7 +22,7 @@ export class VehiclesComponent {
 
   //  variables End
 
-  constructor(private _vehiclesService: VehiclesService) {
+  constructor(private _vehiclesService: VehiclesService, private router: Router) {
     _vehiclesService.getVehicles().subscribe(
       (data: any) => {
         this.vehicles = data;
@@ -71,17 +72,27 @@ export class VehiclesComponent {
 
   // delete functiom from apis
 
-  deleteVehicle(id:any) {
+  deleteVehicle(id: any) {
     this._vehiclesService.deleteVehicles(id).subscribe(
       (data: any) => {
         alert("deleted succesfully");
         location.reload();
       },
-      (err:any) => {
+      (err: any) => {
         alert("Internal server error")
       }
     )
   }
 
+  // page communication
+
+  view(id: number) {
+    this.router.navigateByUrl('/dashboard/vehicle-details/' + id);
+  }
+
+  Edit(id:string){
+    this.router.navigateByUrl("/dashboard/edit-vehicle/"+id)
+
+  }
 }
 

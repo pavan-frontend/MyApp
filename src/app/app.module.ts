@@ -34,6 +34,7 @@ import { DahlComponent } from './dahl/dahl.component';
 import { CreatevehicleComponent } from './createvehicle/createvehicle.component';
 import { CreateuserComponent } from './createuser/createuser.component';
 import { CreateaccountComponent } from './createaccount/createaccount.component';
+import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,8 @@ import { CreateaccountComponent } from './createaccount/createaccount.component'
     DahlComponent,
     CreatevehicleComponent,
     CreateuserComponent,
-    CreateaccountComponent
+    CreateaccountComponent,
+    VehicleDetailsComponent
   ],
   imports: [
     BrowserModule,

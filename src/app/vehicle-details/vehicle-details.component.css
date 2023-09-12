@@ -1,0 +1,9 @@
+.view{
+    border: 1px solid red;
+    width: 600px;
+    height: 600px;
+    padding: 8px;
+}
+img{
+    width: 100%;
+}
