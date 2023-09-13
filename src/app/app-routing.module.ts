@@ -29,6 +29,8 @@ import { CreateaccountComponent } from './createaccount/createaccount.component'
 import { authenticationGuard } from './authentication.guard';
 import { notifyGuard } from './notify.guard';
 import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.component';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './child/child.component';
 
 const routes: Routes = [
   {path:'login', component:LoginComponent},
@@ -57,7 +59,9 @@ const routes: Routes = [
     {path:"createuser",component:CreateuserComponent, canDeactivate:[notifyGuard]},
     {path:"createaccount", component:CreateaccountComponent, canDeactivate:[notifyGuard]},
     {path:"vehicle-details/:id", component:VehicleDetailsComponent},
-    {path:"edit-vehicle/:id",component:CreatevehicleComponent}
+    {path:"edit-vehicle/:id",component:CreatevehicleComponent},
+    {path:"parent",component:ParentComponent},
+    {path:"child",component:ChildComponent}
   
   ]},
   {path:'', component:LoginComponent},
