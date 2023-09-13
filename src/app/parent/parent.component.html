@@ -1,11 +1,26 @@
 <p>parent works!</p>
 
-<input type="number" [(ngModel)]="ap">
-<p>bp:{{bp}}</p>
+<!-- <input type="number" [(ngModel)]="ap"> -->
+<!-- <p>bp:{{bp}}</p> -->
 
-<app-child [ac]="ap" (bEvent)="catch($event)"></app-child>
+<!-- <app-child [ac]="ap" (bEvent)="catch($event)"></app-child> -->
 
-<div [(ngModel)]="rating">
+<!-- <label for="">star Rating:</label><input type = "number" [(ngModel)]="rating"> -->
+<!-- <app-child [rate]="rating"></app-child> -->
+<h1>COMMINICATION BETWEEN ONE COMPONENT TO ANOTHER COMPONENT</h1>
+<div class="calcualte">
     
+    <label>num1</label>
+    <input type="number" [(ngModel)]="num1"><br>
+    <label>num2</label>
+    <input type="number" [(ngModel)]="num2">
+    <h3> Result is:{{result}}</h3>
+    <app-child [n1]="num1" [n2]="num2"  (cal)="catch($event)"></app-child>
 
 </div>
+
+
+
+
+  
+
