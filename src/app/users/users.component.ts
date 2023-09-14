@@ -7,6 +7,7 @@ import { UsersService } from '../users.service';
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent {
+  public Mr:any = [];
   public users: any = [];
 
   public term: any = [];

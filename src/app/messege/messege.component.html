@@ -1,0 +1,21 @@
+<div class="parent">
+    <div class="iphone">
+        <div class="messege">
+            <h1>MESSEGES</h1>
+        </div>
+
+        <div class="input">
+            <input type="search" placeholder="search people here" [(ngModel)]="searchTerm" (keypress)="getfilteredUsers()">
+        </div>
+        <div class="data" *ngFor="let u of user">
+
+            <img [src]="u.picture.thumbnail" alt="">
+            <div>
+                <h3>{{u.name.first}} {{u.name.last}}</h3>
+                <p>{{u.cell}}</p>
+            </div>
+
+
+        </div>
+    </div>
+</div>

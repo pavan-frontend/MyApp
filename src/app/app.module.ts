@@ -37,6 +37,10 @@ import { CreateaccountComponent } from './createaccount/createaccount.component'
 import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.component';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
+import { MessegeComponent } from './messege/messege.component';
+import { NavComponent } from './nav/nav.component';
+import { ItemComponent } from './item/item.component';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -72,7 +76,11 @@ import { ChildComponent } from './child/child.component';
     CreateaccountComponent,
     VehicleDetailsComponent,
     ParentComponent,
-    ChildComponent
+    ChildComponent,
+    MessegeComponent,
+    NavComponent,
+    ItemComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
