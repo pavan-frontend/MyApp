@@ -1,5 +1,5 @@
 import { Component, NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -35,6 +35,8 @@ import { NavComponent } from './nav/nav.component';
 import { ItemComponent } from './item/item.component';
 import { CartComponent } from './cart/cart.component';
 import { MessegeComponent } from './messege/messege.component';
+import { AboutCompanyComponent } from './module/about-company/about-company.component';
+import { AboutceoComponent } from './module/aboutceo/aboutceo.component';
 
 const routes: Routes = [
   {path:'login', component:LoginComponent},
@@ -70,9 +72,13 @@ const routes: Routes = [
     {path:"nav",component:NavComponent},
     {path:"item",component:ItemComponent},
     {path:"cart",component:CartComponent},
-    {path:"messege",component:MessegeComponent}
+    {path:"messege",component:MessegeComponent},
+    {path:"about-company",component:AboutCompanyComponent},
+    {path:"aboutceo",component:AboutceoComponent}
+    
   
   ]},
+  
   {path:'', component:LoginComponent},
   {path:'**', component:PageNotFoundComponent},
 

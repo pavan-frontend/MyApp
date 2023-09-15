@@ -41,6 +41,7 @@ import { MessegeComponent } from './messege/messege.component';
 import { NavComponent } from './nav/nav.component';
 import { ItemComponent } from './item/item.component';
 import { CartComponent } from './cart/cart.component';
+import { ModuleModule } from './module/module.module';
 
 @NgModule({
   declarations: [
@@ -87,7 +88,8 @@ import { CartComponent } from './cart/cart.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ModuleModule
   
   ],
   providers: [],
