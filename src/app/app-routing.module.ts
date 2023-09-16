@@ -74,7 +74,12 @@ const routes: Routes = [
     {path:"cart",component:CartComponent},
     {path:"messege",component:MessegeComponent},
     {path:"about-company",component:AboutCompanyComponent},
-    {path:"aboutceo",component:AboutceoComponent}
+    {path:"aboutceo",component:AboutceoComponent},
+    {
+      path: 'contact',
+      loadChildren: () => import('./contact/contact.module').then(m => m.ContactModule)
+    },
+    
     
   
   ]},
@@ -89,7 +94,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {preloadingStrategy: PreloadAllModules})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
