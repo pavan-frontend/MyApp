@@ -18,7 +18,7 @@ export class AccountlistComponent {
   public page:any = [];
 
   constructor(private _accountlistService:AccountlistService){
-    _accountlistService.getaccountlist().subscribe(
+   _accountlistService.getaccountlist().subscribe(
       (data:any)=>{
         this.accountlist = data;
       },
